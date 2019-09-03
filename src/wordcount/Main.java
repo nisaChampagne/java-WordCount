@@ -11,5 +11,17 @@ public class Main
     unText.replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", "");
     String[] words = unText.split(" +");
     System.out.println(words[1]);
+
+    System.out.println();
+    HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
+    for (String word : words) {
+      if ( wordCount.containsKey(word)){
+        wordCount.put(word, wordCount.get(word) + 1);
+      } else {
+        wordCount.put(word, 1);
+      }
+    }
+    System.out.println(wordCount.get(words[1]));
+    System.out.println(wordCount.size());
     }
 }
